@@ -4,7 +4,7 @@ import { renderCard } from "mtg-crucible";
 async function processAndRenderCard() {
   const container = document.getElementById("card-container");
   const inputTextArea = document.getElementById("card-input-text");
-  // 1. Grab our new image URL input element reference
+  // Grab our new image URL input element reference
   const inputImageUrl = document.getElementById("card-image-url");
 
   // Show a loading text state inside our display zone while processing
@@ -12,25 +12,27 @@ async function processAndRenderCard() {
     '<p style="color: #aaa; font-style: italic;">Assembling spell circles...</p>';
 
   try {
-    // 2. Snatch the current raw plain-text content from the textarea box
+    // Grab the current raw plain-text content from the textarea box
     let userTypedData = inputTextArea.value;
     const imageUrl = inputImageUrl ? inputImageUrl.value.trim() : "";
 
-    // 3. Append the Image directive configuration if a URL exists
+    // 1. FIX: Use the exact 'Art URL:' syntax string recognized by mtg-crucible
     if (imageUrl) {
-      userTypedData += `\nImage: ${imageUrl}`;
+      userTypedData += `\nArt URL: ${imageUrl}`;
     }
 
     console.log("Compiling custom payload text layout...");
 
-    // 4. Pass the combined multi-line text layout payload directly to the engine
-    const result = await renderCard(userTypedData);
+    // 2. FIX: Pass the 'allowUnsafeArtUrls: true' flag to permit external fetching in-browser
+    const result = await renderCard(userTypedData, {
+      allowUnsafeArtUrls: true,
+    });
 
-    // 5. Process the resulting byte arrays into an object URL route safely
+    // Process the resulting byte arrays into an object URL route safely
     const cardBlob = new Blob([result.frontFace], { type: "image/png" });
     const cardObjectURL = URL.createObjectURL(cardBlob);
 
-    // 6. Mount the brand new graphical card image into the preview portal
+    // Mount the brand new graphical card image into the preview portal
     const imgElement = document.createElement("img");
     imgElement.src = cardObjectURL;
     imgElement.alt = "Dynamically Rendered Custom MTG Card";
