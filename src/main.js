@@ -4,25 +4,33 @@ import { renderCard } from "mtg-crucible";
 async function processAndRenderCard() {
   const container = document.getElementById("card-container");
   const inputTextArea = document.getElementById("card-input-text");
+  // 1. Grab our new image URL input element reference
+  const inputImageUrl = document.getElementById("card-image-url");
 
   // Show a loading text state inside our display zone while processing
   container.innerHTML =
     '<p style="color: #aaa; font-style: italic;">Assembling spell circles...</p>';
 
   try {
-    // 1. Snatch the current raw plain-text content from the textarea box
-    const userTypedData = inputTextArea.value;
+    // 2. Snatch the current raw plain-text content from the textarea box
+    let userTypedData = inputTextArea.value;
+    const imageUrl = inputImageUrl ? inputImageUrl.value.trim() : "";
+
+    // 3. Append the Image directive configuration if a URL exists
+    if (imageUrl) {
+      userTypedData += `\nImage: ${imageUrl}`;
+    }
 
     console.log("Compiling custom payload text layout...");
 
-    // 2. Pass the fresh user-input string into the crucible library engine
+    // 4. Pass the combined multi-line text layout payload directly to the engine
     const result = await renderCard(userTypedData);
 
-    // 3. Process the resulting byte arrays into an object URL route safely
+    // 5. Process the resulting byte arrays into an object URL route safely
     const cardBlob = new Blob([result.frontFace], { type: "image/png" });
     const cardObjectURL = URL.createObjectURL(cardBlob);
 
-    // 4. Mount the brand new graphical card image into the preview portal
+    // 6. Mount the brand new graphical card image into the preview portal
     const imgElement = document.createElement("img");
     imgElement.src = cardObjectURL;
     imgElement.alt = "Dynamically Rendered Custom MTG Card";
