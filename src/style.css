@@ -1,4 +1,4 @@
-/* CSS RESET */
+/* FONT */
 
 @font-face {
   font-family: "medivealFont";
@@ -7,19 +7,28 @@
   font-style: normal;
 }
 
+/* CSS RESET */
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+/* BODY */
+
 body {
   display: grid;
   place-items: center;
   font-family: system-ui, sans-serif;
   background: #1e1e1e;
-  color: #fff;
+  color: whitesmoke;
   padding: 20px;
+  gap: 20px;
+}
+
+h1 {
+  font: 3rem "medivealFont";
 }
 .app-layout {
   display: flex;
@@ -27,6 +36,21 @@ body {
   flex-wrap: wrap;
   margin-top: 20px;
 }
+
+#cards-svg {
+  height: 4rem;
+  filter: invert(53%) sepia(91%) saturate(3501%) hue-rotate(325deg)
+    brightness(96%) contrast(93%);
+}
+
+/* EDIT CARD TEXT */
+
+h3 {
+  display: grid;
+  place-items: center;
+  margin-right: 32px;
+}
+
 .editor {
   display: flex;
   flex-direction: column;
@@ -44,6 +68,15 @@ textarea {
   font-family: monospace;
   font-size: 14px;
 }
+
+.editor {
+  display: grid;
+  align-content: center;
+  width: 420px;
+  height: 580px;
+}
+
+/* BUTTON */
 button {
   background: #ff4d4d;
   color: white;
@@ -57,6 +90,8 @@ button {
 button:hover {
   background: #ff3333;
 }
+
+/* CARD */
 #card-container {
   min-width: 420px;
   min-height: 590px;
@@ -68,16 +103,11 @@ button:hover {
   border: 2px dashed #333;
 }
 
+/* URL INPUT */
+#card-input-text {
+  height: 470px;
+}
+
 .input-group {
   width: 680px;
-}
-
-#cards-svg {
-  height: 4rem;
-  filter: invert(53%) sepia(91%) saturate(3501%) hue-rotate(325deg)
-    brightness(96%) contrast(93%);
-}
-
-h1 {
-  font: 3rem "medivealFont";
 }
