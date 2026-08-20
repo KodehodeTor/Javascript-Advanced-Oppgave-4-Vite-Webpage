@@ -76,6 +76,10 @@ textarea {
   height: 580px;
 }
 
+textarea#card-input-text {
+  font-size: 1rem;
+}
+
 /* BUTTON */
 button {
   background: #ff4d4d;
