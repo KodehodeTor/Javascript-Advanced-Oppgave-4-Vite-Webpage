@@ -60,16 +60,19 @@ h1 {
 /* EDIT CARD TEXT */
 
 h3 {
-  display: grid;
-  place-items: center;
-  padding-right: 32px;
+  padding-left: 10px;
   appearance: none;
   background-color: #d9dfe2;
   color: black;
   font-family: Beleren;
-  font-size: 24px;
+  font-size: 22px;
   border-radius: 8px;
   height: 2rem;
+}
+
+.editor h3 {
+  padding-top: 13px;
+  height: 42px;
 }
 
 .editor {
