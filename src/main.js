@@ -1,3 +1,4 @@
+import "./style.css";
 import { renderCard } from "mtg-crucible";
 
 // This reusable function handles fetching, building, and rendering the card image

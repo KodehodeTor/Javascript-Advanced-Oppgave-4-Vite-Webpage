@@ -1,0 +1,7 @@
+npm create vite@latest
+
+Npm install chart.js
+
+npm i
+
+npm run dev
