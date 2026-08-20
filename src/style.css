@@ -1,8 +1,15 @@
-/* FONT */
+/* FONTS */
 
 @font-face {
   font-family: "medivealFont";
   src: url("./assets/fonts/UncialAntiqua-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MPlantin";
+  src: url("./assets/fonts/MPlantin Regular.tff") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -65,7 +72,7 @@ textarea {
   border: 1px solid #444;
   border-radius: 8px;
   padding: 12px;
-  font-family: monospace;
+  font-family: MPlantin;
   font-size: 14px;
 }
 
@@ -78,6 +85,10 @@ textarea {
 
 textarea#card-input-text {
   font-size: 1rem;
+}
+
+#card-input-text {
+  height: 470px;
 }
 
 /* BUTTON */
@@ -108,10 +119,43 @@ button:hover {
 }
 
 /* URL INPUT */
-#card-input-text {
-  height: 470px;
+
+/* .input-group {
+  width: 680px;
+} */
+
+input#card-image-url {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  color: whitesmoke;
 }
 
 .input-group {
   width: 680px;
+  height: 30px;
+  border: 2px solid transparent;
+  outline: none;
+  border-bottom: 2px solid #3f3f3f;
+  caret-color: #3f3f3f;
+  background-color: #212121;
+  padding: 5px;
+  transition: 0.5s linear;
+  font-family: MPlantin;
+  letter-spacing: 1px;
+}
+
+.input-group:focus {
+  border: 2px solid #fa4753;
+  caret-color: #fa4753;
+  color: #fa4753;
+  box-shadow: 4px 4px 10px #070707;
+}
+
+.input-group:focus::placeholder {
+  color: #fa4753;
 }
