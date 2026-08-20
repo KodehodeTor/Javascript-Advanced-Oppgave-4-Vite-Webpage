@@ -68,9 +68,11 @@ h3 {
   font-family: Beleren;
   font-size: 24px;
   border-radius: 8px;
+  height: 2rem;
 }
 
 .editor {
+  margin-top: 10px;
   gap: 15px;
   border: 14px solid black;
   border-radius: 14px;
@@ -80,7 +82,6 @@ h3 {
   width: 418px;
   height: 568px;
   box-shadow: 0 0 0 10px black;
-  margin: 10px;
 }
 textarea {
   width: 100%;
@@ -100,11 +101,14 @@ textarea#card-input-text {
 }
 
 #card-input-text {
-  height: 450px;
+  height: 440px;
 }
+
+/* GENERATED CARD */
 
 /* BUTTON */
 button {
+  margin-top: 5px;
   background: #ff4d4d;
   color: white;
   border: none;
