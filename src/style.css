@@ -40,6 +40,7 @@ body {
   gap: 20px;
 }
 
+/* TITLE */
 h1 {
   font: 3rem "medivealFont";
 }
@@ -48,6 +49,10 @@ h1 {
   gap: 40px;
   flex-wrap: wrap;
   margin-top: 50px;
+}
+
+#cards-svg {
+  margin-bottom: -15px;
 }
 
 /* Filter to change the card svg file to this color: ff4d4d  */
