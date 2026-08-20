@@ -1,5 +1,12 @@
 /* CSS RESET */
 
+@font-face {
+  font-family: "medivealFont";
+  src: url("./assets/fonts/UncialAntiqua-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -7,6 +14,8 @@
 }
 
 body {
+  display: grid;
+  place-items: center;
   font-family: system-ui, sans-serif;
   background: #1e1e1e;
   color: #fff;
@@ -60,11 +69,15 @@ button:hover {
 }
 
 .input-group {
-  display: block;
+  width: 680px;
 }
 
 #cards-svg {
-  height: 2rem;
+  height: 4rem;
   filter: invert(53%) sepia(91%) saturate(3501%) hue-rotate(325deg)
     brightness(96%) contrast(93%);
+}
+
+h1 {
+  font: 3rem "medivealFont";
 }
