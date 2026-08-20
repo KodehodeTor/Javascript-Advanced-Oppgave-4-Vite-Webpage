@@ -50,6 +50,7 @@ h1 {
   margin-top: 50px;
 }
 
+/* Filter to change the card svg file to this color: ff4d4d  */
 #cards-svg {
   height: 4rem;
   filter: invert(53%) sepia(91%) saturate(3501%) hue-rotate(325deg)
@@ -103,8 +104,6 @@ textarea#card-input-text {
 #card-input-text {
   height: 440px;
 }
-
-/* GENERATED CARD */
 
 /* BUTTON */
 button {
