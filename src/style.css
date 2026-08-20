@@ -13,6 +13,12 @@
   font-weight: 400;
   font-style: normal;
 }
+@font-face {
+  font-family: "Beleren";
+  src: url("./assets/fonts/Beleren.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
 
 /* CSS RESET */
 
@@ -41,7 +47,7 @@ h1 {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 #cards-svg {
@@ -55,18 +61,29 @@ h1 {
 h3 {
   display: grid;
   place-items: center;
-  margin-right: 32px;
+  padding-right: 32px;
+  appearance: none;
+  background-color: #d9dfe2;
+  color: black;
+  font-family: Beleren;
+  font-size: 24px;
+  border-radius: 8px;
 }
 
 .editor {
-  display: flex;
-  flex-direction: column;
   gap: 15px;
-  width: 450px;
+  border: 14px solid black;
+  border-radius: 14px;
+  background-color: black;
+  display: grid;
+  align-content: start;
+  width: 418px;
+  height: 568px;
+  box-shadow: 0 0 0 10px black;
+  margin: 10px;
 }
 textarea {
   width: 100%;
-  height: 250px;
   background: #2d2d2d;
   color: #fff;
   border: 1px solid #444;
@@ -76,19 +93,14 @@ textarea {
   font-size: 14px;
 }
 
-.editor {
-  display: grid;
-  align-content: center;
-  width: 420px;
-  height: 580px;
-}
-
 textarea#card-input-text {
-  font-size: 1rem;
+  font-size: 1.3rem;
+  background-color: #d9dfe2;
+  color: black;
 }
 
 #card-input-text {
-  height: 470px;
+  height: 450px;
 }
 
 /* BUTTON */
@@ -106,23 +118,7 @@ button:hover {
   background: #ff3333;
 }
 
-/* CARD */
-#card-container {
-  min-width: 420px;
-  min-height: 590px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #111;
-  border-radius: 18px;
-  border: 2px dashed #333;
-}
-
 /* URL INPUT */
-
-/* .input-group {
-  width: 680px;
-} */
 
 input#card-image-url {
   appearance: none;
@@ -146,16 +142,4 @@ input#card-image-url {
   padding: 5px;
   transition: 0.5s linear;
   font-family: MPlantin;
-  letter-spacing: 1px;
-}
-
-.input-group:focus {
-  border: 2px solid #fa4753;
-  caret-color: #fa4753;
-  color: #fa4753;
-  box-shadow: 4px 4px 10px #070707;
-}
-
-.input-group:focus::placeholder {
-  color: #fa4753;
 }
