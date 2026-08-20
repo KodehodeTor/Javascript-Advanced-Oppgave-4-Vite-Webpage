@@ -73,6 +73,9 @@ h3 {
 .editor h3 {
   padding-top: 13px;
   height: 42px;
+  outline: 2px solid black;
+  outline-offset: -7px;
+  border-radius: 17.5px;
 }
 
 .editor {
