@@ -74,7 +74,7 @@ h3 {
 .editor {
   margin-top: 10px;
   gap: 15px;
-  border: 14px solid black;
+  border: 8px solid black;
   border-radius: 14px;
   background-color: black;
   display: grid;
