@@ -62,3 +62,9 @@ button:hover {
 .input-group {
   display: block;
 }
+
+#cards-svg {
+  height: 2rem;
+  filter: invert(53%) sepia(91%) saturate(3501%) hue-rotate(325deg)
+    brightness(96%) contrast(93%);
+}
